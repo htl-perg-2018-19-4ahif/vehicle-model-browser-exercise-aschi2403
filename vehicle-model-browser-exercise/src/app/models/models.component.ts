@@ -41,6 +41,8 @@ export class ModelsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  pageEvent;
+
   constructor(private http: HttpClient){
   }
 

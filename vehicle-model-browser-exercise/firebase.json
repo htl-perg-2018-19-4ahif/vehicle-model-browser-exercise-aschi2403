@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/vehicle-model-browser-exercise",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
