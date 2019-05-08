@@ -15,6 +15,14 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-form-field>
+        <mat-label>fuel</mat-label>
+        <mat-select [(value)]="fuel" (valueChange)="loadVehicleList()">
+          <mat-option *ngFor="let fuel of fuelList" [value]="fuel.id">
+            {{fuel.description}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
     <button (click)="loadVehicleList()" mat-button>Refresh</button>
 
@@ -35,4 +43,4 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator [length]="length" [pageSize]="pageSize" (valueChange)="handlePaginatorChange()" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+<mat-paginator [length]="length" [pageSize]="pageSize" (page)="pageEvent = getPaginatorData($event)" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
